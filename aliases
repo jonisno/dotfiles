@@ -1,0 +1,15 @@
+# Add some aliases to navigate reach.
+REACH='~/workspaces/reach/webapp'
+alias rs="cd $REACH/lib/Reach/Schema/Result"
+alias templates="cd $REACH/templates"
+alias js="cd $REACH/public/js"
+alias rlib="cd $REACH/lib/Reach"
+alias api="cd $REACH/lib/Reach/Api/V1"
+alias apitests="cd $REACH/tests/api/v1"
+alias tests="cd $REACH/tests"
+alias sql="cd $REACH/sql/migrations"
+alias reach="cd $REACH"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../../'
+alias .....='cd ../../../..'

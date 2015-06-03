@@ -1,0 +1,51 @@
+[user]
+	name = jonisno
+	email = jonis@jonis.no
+
+[alias]
+	p = pull
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+[apply]
+	whitespace = fix
+
+[color]
+	ui = auto
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[core]
+	editor = vim
+	pager = less -x4
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+[help]
+	autocorrect = 1
+
+[merge]
+	log = true
+
+[push]
+	default = current
