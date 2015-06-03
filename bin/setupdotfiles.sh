@@ -1,27 +1,26 @@
 #!/bin/bash
 
-setupdotfiles() {
-		# remove old files
-		rm ~/.bashrc ~/.vimrc ~/.gitconfig
-		rm -r ~/.vimrc
+DOTDIR="$HOME/dotfiles"
 
-		# symlink needed dotfiles.
-		ln -s ~/dotfiles/vimrc ~/.vimrc
-		ln -s ~/dotfiles/bashrc ~/.bashrc
-		ln -s ~/dotfiles/gitconfig ~/.gitconfig
-		ln -s ~/dotfiles/vim ~/.vim
+# symlink needed dotfiles.
 
-		# tmp directory for temporary vim files.
-		mdkir ~/dotfiles/tmp
-		
-		if [ -d "~/dotfiles/vim/bundle" ] ; then
-			git clone git@github.com:gmarik/Vundle.vim.git vim/bundle/Vundle.vim
-			vim +BundleInstall +qall
-		fi;
-}
+for i in .{vimrc,bashrc,gitconfig,vim}
+do
+	if [ ! -f "$HOME/${i}" -a ! -L "$HOME/${i}" ] ; then
+		ln -s $DOTDIR/${i:1} ~/${i}
+	fi
+done
 
-read -p "This may overwrite shit, y/n? " yn
-case $in in
-	[Yy]* ) setupdotfiles();;
-	[Nn]* ) echo "Aborted";;
-esac
+# check for bundle
+BUNDLEDIR="$DOTDIR/vim/bundle"
+if [ ! -d "$BUNDLEDIR" ] ; then
+	mkdir -p $BUNDLEDIR
+	git clone git@github.com:gmarik/Vundle.vim.git $BUNDLEDIR/Vundle.vim
+fi
+
+if [ ! -d "$DOTDIR/tmp" ] ; then
+	mkdir -p "$DOTDIR/tmp"
+fi
+
+. ~/.bashrc
+vim +BundleInstall +qall
