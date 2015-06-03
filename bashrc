@@ -73,9 +73,16 @@ if ! shopt -oq posix; then
 fi
 
 
-perlbrew="~/perl5/perlbrew/etc/bashrc"
-[ -r "$perlbrew" ] && [ -f "$perlbrew" ] && source "$perlbrew"
-[ -r "~/dotfiles/aliases" ] && [ -f "~/dotfiles/aliases" ] && source "~/dotfiles/aliases"
+perlbrew="$HOME/perl5/perlbrew/etc/bashrc"
+if [ -r "$perlbrew" -a -f "$perlbrew" ] ; then
+	source "$perlbrew"
+fi
+
+if [[ -r "$HOME/dotfiles/aliases"  &&  -f "$HOME/dotfiles/aliases" ]] ; then
+	. "$HOME/dotfiles/aliases"
+fi
+
+
 
 
 
