@@ -15,7 +15,6 @@ set smartindent
 colorscheme jellybeans
 set nocompatible
 set laststatus=2
-filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -28,8 +27,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'yko/mojo.vim'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
+filetype off
 filetype plugin indent on " required!
 
 " start nerdtree at vim opening
@@ -53,8 +54,16 @@ augroup mySyntastic
 augroup END
 
 " tabs
-nnoremap <C-n> :tabnext<CR>
-nnoremap <C-p> :tabprevious<CR>
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+" Ctrl P settings.
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " needed for vim-gitgutter
 hi clear SignColumn
@@ -75,3 +84,4 @@ endif
 
 " I sometimes forget to sudo.
 cmap w!! w !sudo tee > /dev/null %
+

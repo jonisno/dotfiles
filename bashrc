@@ -79,7 +79,7 @@ if [ -r "$perlbrew" -a -f "$perlbrew" ] ; then
 fi
 
 # Add some aliases to navigate reach.
-REACH='$HOME/workspaces/reach/webapp'
+REACH="$HOME/workspaces/reach/webapp"
 if [ -d $REACH ] ; then
 	alias rs="cd $REACH/lib/Reach/Schema/Result"
 	alias templates="cd $REACH/templates"
