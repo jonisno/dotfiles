@@ -78,11 +78,24 @@ if [ -r "$perlbrew" -a -f "$perlbrew" ] ; then
 	source "$perlbrew"
 fi
 
-if [[ -r "$HOME/dotfiles/aliases"  &&  -f "$HOME/dotfiles/aliases" ]] ; then
-	. "$HOME/dotfiles/aliases"
+# Add some aliases to navigate reach.
+REACH='$HOME/workspaces/reach/webapp'
+if [ -d $REACH ] ; then
+	alias rs="cd $REACH/lib/Reach/Schema/Result"
+	alias templates="cd $REACH/templates"
+	alias js="cd $REACH/public/js"
+	alias rlib="cd $REACH/lib/Reach"
+	alias api="cd $REACH/lib/Reach/Api/V1"
+	alias apitests="cd $REACH/tests/api/v1"
+	alias tests="cd $REACH/tests"
+	alias sql="cd $REACH/sql/migrations"
+	alias reach="cd $REACH"
 fi
 
-
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../../'
+alias .....='cd ../../../..'
 
 
 

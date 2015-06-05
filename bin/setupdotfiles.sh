@@ -31,7 +31,8 @@ case "$yn" in
 	y|Y)
 		echo "Deleting old files."
 		rm $HOME/.bashrc $HOME/.vimrc $HOME/.gitconfig
-		rf -r $HOME/.vim
+		rm -rf $HOME/.vim
+		rm -rf $HOME/dotfiles/vim/bundle
 		initialize
 	;;
 	n|N)
