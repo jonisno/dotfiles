@@ -97,5 +97,5 @@ alias ...='cd ../..'
 alias ....='cd ../../../'
 alias .....='cd ../../../..'
 
-
+alias vim="vim -p"
 
