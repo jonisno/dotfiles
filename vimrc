@@ -68,6 +68,10 @@ nmap <Leader><Leader> V
 "If visual mode move down a line with space.
 vmap <Leader> j
 
+" use v to expand selection
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 " tabs
 " map <Leader><Left>  :tabprevious<CR>
 " map <Leader><Right> :tabnext<CR>
