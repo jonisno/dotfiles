@@ -85,3 +85,7 @@ endif
 " I sometimes forget to sudo.
 cmap w!! w !sudo tee > /dev/null %
 
+" Turn on folding for perl
+set foldmethod=syntax
+set foldlevelstart=1
+let perl_fold=1
