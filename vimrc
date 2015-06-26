@@ -28,6 +28,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'yko/mojo.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'terryma/vim-expand-region'
 
 call vundle#end()
 filetype off
@@ -42,7 +43,6 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " close nerdtree when it is the last open buffer.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nmap <silent> <C-l> :NERDTreeToggle<CR>
 "" show hidden files in nerdtree
 let NERDTreeShowHidden=1
 
@@ -53,17 +53,28 @@ augroup mySyntastic
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
-" tabs
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+let g:syntastic_html_tidy_exec = 'tidy5'
 
-" Ctrl P settings.
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" Keymaps
+let mapleader = "\<space>"
+nmap <silent> <Leader>l :NERDTreeToggle<CR>
+nmap <Leader>o :CtrlP<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>wq :wq<CR>
+nmap <Leader>q :q!<CR>
+
+"Select line with space
+nmap <Leader><Leader> V
+"If visual mode move down a line with space.
+vmap <Leader> j
+
+" use v to expand selection
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" tabs
+" map <Leader><Left>  :tabprevious<CR>
+" map <Leader><Right> :tabnext<CR>
 
 " needed for vim-gitgutter
 hi clear SignColumn

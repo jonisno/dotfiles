@@ -90,12 +90,11 @@ if [ -d $REACH ] ; then
 	alias tests="cd $REACH/tests"
 	alias sql="cd $REACH/sql/migrations"
 	alias reach="cd $REACH"
+	alias runtests="MOJO_LOG_LEVEL=fatal MOJO_MODE=testing prove -Pretty -vlr tests/"
 fi
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../../'
 alias .....='cd ../../../..'
-
-alias vim="vim -p"
 
