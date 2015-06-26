@@ -39,13 +39,11 @@
 [core]
 	editor = vim
 	pager = less -x4
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [help]
 	autocorrect = 1
 
 [merge]
-	log = true
-
+	ff = true
 [push]
-	default = current
+	default = simple
