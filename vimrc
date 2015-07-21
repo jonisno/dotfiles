@@ -97,6 +97,6 @@ endif
 cmap w!! w !sudo tee > /dev/null %
 
 " Turn on folding for perl
-set foldmethod=syntax
-set foldlevelstart=1
-let perl_fold=1
+"set foldmethod=syntax
+"set foldlevelstart=1
+"let perl_fold=1

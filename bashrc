@@ -61,6 +61,9 @@ export LESS_TERMCAP_us=$'\E[0m'
 # Set dbic profile.
 export DBIC_TRACE_PROFILE=console
 
+# Grep with colours
+alias grep="grep --colour"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -90,7 +93,7 @@ if [ -d $REACH ] ; then
 	alias tests="cd $REACH/tests"
 	alias sql="cd $REACH/sql/migrations"
 	alias reach="cd $REACH"
-	alias runtests="MOJO_LOG_LEVEL=fatal MOJO_MODE=testing prove -Pretty -vlr tests/"
+	alias ptest="MOJO_LOG_LEVEL=fatal MOJO_MODE=testing prove -Pretty -vlr"
 fi
 
 alias ..='cd ..'
