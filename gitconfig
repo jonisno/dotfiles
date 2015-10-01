@@ -1,6 +1,6 @@
 [user]
 	name = jonisno
-	email = jonis@jonis.no
+	email = jon@stix.no
 
 [alias]
 	p = pull
@@ -42,3 +42,5 @@
 
 [merge]
 	ff = true
+[push]
+	default = simple
