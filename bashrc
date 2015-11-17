@@ -101,3 +101,4 @@ alias ...='cd ../..'
 alias ....='cd ../../../'
 alias .....='cd ../../../..'
 
+PATH="$PATH:$HOME/npm-global/bin"
