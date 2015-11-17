@@ -7,8 +7,8 @@ HISTCONTROL=ignoreboth
 
 shopt -s histappend
 
-HISTSIZE=10000
-HISTFILESIZE=20000
+HISTSIZE=100000
+HISTFILESIZE=2000000
 
 shopt -s checkwinsize
 
@@ -102,3 +102,4 @@ alias ....='cd ../../../'
 alias .....='cd ../../../..'
 
 PATH="$PATH:$HOME/npm-global/bin"
+. ~/.private/*
