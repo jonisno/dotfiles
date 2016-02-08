@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/jonis/dotfiles/bin'
+let g:netrw_dirhist_2='/home/jonis/workspaces/reach/webapp/tests/web'
+let g:netrw_dirhist_3='/Users/jonis/workspaces/reach/webapp/tests/web'
+let g:netrw_dirhist_4='/Users/jonis/workspaces/reach/webapp/lib/EasyConnect'
