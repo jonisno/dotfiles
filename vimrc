@@ -16,24 +16,26 @@ colorscheme jellybeans
 set nocompatible
 set laststatus=2
 set rtp+=~/.vim/bundle/Vundle.vim
+set clipboard=unnamed
+
+filetype off
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'yko/mojo.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'terryma/vim-expand-region'
 Plugin 'rodjek/vim-puppet'
 Plugin 'godlygeek/tabular'
+Plugin 'vim-perl/vim-perl'
+Plugin 'leafgarland/typescript-vim.git'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
-filetype off
 filetype plugin indent on " required!
 
 " start nerdtree at vim opening
@@ -104,3 +106,6 @@ cmap w!! w !sudo tee > /dev/null %
 "let perl_fold=1
 
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+
+" subroutine signatures for vim-perl
+let perl_sub_signatures = 1
