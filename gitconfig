@@ -42,5 +42,6 @@
 
 [merge]
 	ff = true
+
 [push]
 	default = simple
