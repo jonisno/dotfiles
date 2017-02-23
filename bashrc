@@ -7,8 +7,8 @@ HISTCONTROL=ignoreboth
 
 shopt -s histappend
 
-HISTSIZE=
-HISTFILESIZE=
+HISTSIZE=100000
+HISTFILESIZE=2000000
 
 shopt -s checkwinsize
 
@@ -81,23 +81,25 @@ if [ -r "$perlbrew" -a -f "$perlbrew" ] ; then
 	source "$perlbrew"
 fi
 
+# Add some aliases to navigate reach.
+REACH="$HOME/workspaces/reach/webapp"
+if [ -d $REACH ] ; then
+	alias rs="cd $REACH/lib/Reach/Schema/Result"
+	alias templates="cd $REACH/templates"
+	alias js="cd $REACH/public/js"
+	alias rlib="cd $REACH/lib/Reach"
+	alias api="cd $REACH/lib/Reach/Api/V1"
+	alias apitests="cd $REACH/tests/api/v1"
+	alias tests="cd $REACH/tests"
+	alias sql="cd $REACH/sql/migrations"
+	alias reach="cd $REACH"
+	alias ptest="MOJO_LOG_LEVEL=fatal MOJO_MODE=testing prove -Pretty -vlr"
+fi
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../../'
 alias .....='cd ../../../..'
 
-if [ -d "$HOME/npm-global" ]; then
-	PATH="$HOME/npm-global/bin:$PATH"
-fi
-
-if [ -d "/opt/puppetlabs/bin" ]; then
-	PATH="/opt/puppetlabs/bin:$PATH"
-fi
-
-if [ -d "$HOME/.private" ]; then
-	PRIVATE="$HOME/.private/*"
-	for f in $PRIVATE
-	do
-		source $f
-	done
-fi
+PATH="$PATH:$HOME/npm-global/bin"
+. ~/.private/*
